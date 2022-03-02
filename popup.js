@@ -100,3 +100,45 @@ function clearMessage() {
   message.hidden = true;
   message.textContent = "";
 }
+
+
+// populates the cache with the response from the chrome api on a get call
+function ingestWithDomainFilter(cookies, domainFilter) {
+ cache = []
+ var cookieCount = 0;
+ var subCookieCount = 0;
+
+  for (var i in cookies) {
+
+      if ( cookies[i].domain.toLowerCase() == domainFilter.toLowerCase() || cookies[i].domain.toLowerCase() == "." + domainFilter.toLowerCase()) {
+        cache.push(cookies[i])
+
+        cookieCount += 1;
+        subCookieCount += 1;
+      }
+       else if (cookies[i].domain.startsWith(".") && isFilterMatch(domainFilter, cookies[i].domain)) {
+          cache.push(cookies[i])
+          cookieCount += 1;
+
+
+      } else if (domainFilter.startsWith(".") && isFilterMatch(cookies[i].domain, domainFilter) ) {
+          cache.push(cookies[i])
+          cookieCount += 1;
+      }
+  
+    }
+
+   document.querySelector("#cookiecount").innerText = "found " + cookieCount + " cookie(s) in scope\n" +  "found " + subCookieCount + " matching subdomain\n";
+   renderCookiesFromCache(document.querySelector('#cookieFilter').value);
+}
+
+
+// api wrapper to get all cookies and pass them onto the caching filter
+function lookupCookies() {
+	filter = document.querySelector("#domainFilter").value
+	chrome.cookies.getAll({}, function(cookies) {
+     // gets the cookies
+      cookieSort(cookies)
+    // sorts the cookies
+   		ingestWithDomainFilter(cookies, filter) 
+  });
