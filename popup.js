@@ -106,8 +106,10 @@ function clearMessage() {
 // Checking if a cookie exists
 document.cookie = "reader=1; SameSite=Lax; Secure";
 
-function checkACookieExists() {
-  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+function checkACookieExists(cookie) {
+  // the cookie parameter should be a string
+  if (document.cookie.split(';').some((item) => item.trim().startsWith(cookie))) {
+    // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
     const output = document.getElementById('a-cookie-existence')
     output.textContent = '> The cookie "reader" exists'
   }
