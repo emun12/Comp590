@@ -104,7 +104,7 @@ function clearMessage() {
 
 
 // Checking if a cookie exists
-document.cookie = "reader=1; SameSite=None; Secure";
+document.cookie = "reader=1; SameSite=Lax; Secure";
 
 function checkACookieExists() {
   if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
