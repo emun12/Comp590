@@ -1,1 +1,1 @@
-# Comp590
+# Comp590 Project
