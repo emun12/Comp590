@@ -102,43 +102,19 @@ function clearMessage() {
 }
 
 
-// populates the cache with the response from the chrome api on a get call
-function ingestWithDomainFilter(cookies, domainFilter) {
- cache = []
- var cookieCount = 0;
- var subCookieCount = 0;
 
-  for (var i in cookies) {
+// Checking if a cookie exists
+document.cookie = "reader=1; SameSite=None; Secure";
 
-      if ( cookies[i].domain.toLowerCase() == domainFilter.toLowerCase() || cookies[i].domain.toLowerCase() == "." + domainFilter.toLowerCase()) {
-        cache.push(cookies[i])
-
-        cookieCount += 1;
-        subCookieCount += 1;
-      }
-       else if (cookies[i].domain.startsWith(".") && isFilterMatch(domainFilter, cookies[i].domain)) {
-          cache.push(cookies[i])
-          cookieCount += 1;
-
-
-      } else if (domainFilter.startsWith(".") && isFilterMatch(cookies[i].domain, domainFilter) ) {
-          cache.push(cookies[i])
-          cookieCount += 1;
-      }
-  
-    }
-
-   document.querySelector("#cookiecount").innerText = "found " + cookieCount + " cookie(s) in scope\n" +  "found " + subCookieCount + " matching subdomain\n";
-   renderCookiesFromCache(document.querySelector('#cookieFilter').value);
+function checkACookieExists() {
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+    const output = document.getElementById('a-cookie-existence')
+    output.textContent = '> The cookie "reader" exists'
+  }
 }
 
+function clearOutputACookieExists() {
+  const output = document.getElementById('a-cookie-existence')
+  output.textContent = ''
+}
 
-// api wrapper to get all cookies and pass them onto the caching filter
-function lookupCookies() {
-	filter = document.querySelector("#domainFilter").value
-	chrome.cookies.getAll({}, function(cookies) {
-     // gets the cookies
-      cookieSort(cookies)
-    // sorts the cookies
-   		ingestWithDomainFilter(cookies, filter) 
-  });
