@@ -2,7 +2,6 @@ const form = document.getElementById("control-row");
 const go = document.getElementById("go");
 const input = document.getElementById("input");
 const message = document.getElementById("message");
-var reset = document.querySelector('.color-reset button');
 
 // The async IIFE is necessary because Chrome <89 does not support top level await.
 (async function initPopupWindow() {
@@ -101,23 +100,6 @@ function clearMessage() {
   message.hidden = true;
   message.textContent = "";
 }
-
-// resets background
-reset.onclick = function() {
-    getActiveTab().then((tabs) => {
-        browser.tabs.sendMessage(tabs[0].id, { reset: true });
-
-        cookieVal = {
-            image: '',
-            color: ''
-        };
-        browser.cookies.remove({
-            url: tabs[0].url,
-            name: "bgpicker"
-        })
-    });
-}
-
 
 // Checking if a cookie exists
 //document.cookie = "reader=1; SameSite=Lax; Secure";
