@@ -9,6 +9,7 @@
    "options_page": "options.html",
  
    "permissions": ["cookies", "storage", "activeTab", "scripting", "privacy"],
+   "optional_permissions": ["tabs"],
    "host_permissions": ["<all_urls>"],
    "action": {
      "default_popup": "popup.html",

@@ -119,3 +119,47 @@ function clearOutputACookieExists() {
   output.textContent = ''
 }
 
+
+// requesting optional permissions
+document.querySelector('#optionalPermissions').addEventListener('click', (event) => {
+  // Permissions must be requested from inside a user gesture, like a button's
+  // click handler.
+  chrome.permissions.request({
+    permissions: ['tabs'],
+    origins: ['https://www.google.com/']
+  }, (granted) => {
+    // The callback argument will be true if the user granted the permissions.
+    if (granted) {
+      // doSomething();
+      alert("Optional permission granted");
+    } else {
+      // doSomethingElse();
+      alert(" Optional permission denied");
+    }
+  });
+});
+
+
+// removing optional permissions
+
+document.querySelector('#permissionRemoval').addEventListener('click', (event) => {
+
+  chrome.permissions.remove({
+    permissions: ['tabs'],
+    origins: ['https://www.google.com/']
+  }, (removed) => {
+    if (removed) {
+      //BUG
+      // The permissions have been removed.
+      alert("Permission removed");
+    } else {
+      // The permissions have not been removed (e.g., you tried to remove
+      // required permissions).
+      alert("Permission not removed");
+
+    }
+  }) 
+}); 
+
+
+

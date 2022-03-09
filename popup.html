@@ -2,31 +2,31 @@
 <html>
   <head>
     <script src="popup.js" type="module"></script>
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="popup.css" />
   </head>
+
   <body>
-    <form id="control-row">
-      <label for="input">Domain:</label>
-      <input type="text" id="input">
-      <br>
-      <button id="go">Clear Cookies</button>
-    </form>
-    <span id="message" hidden></span>
+    <h1>Welcome to our cookie extension!</h1>
+    <div>
+      <form id="control-row">
+        <label for="input">Domain:</label>
+        <input type="text" id="input" />
+        <br />
+
+        <button id="go">Clear Cookies</button>
+      </form>
+      <span id="message" hidden></span>
+
+      <button onclick="checkACookieExists()">Check a cookie exists</button>
+
+      <button onclick="clearOutputACookieExists()">Clear</button>
+
+      <div>
+        <code id="a-cookie-existence"></code>
+      </div>
+
+      <button id="optionalPermissions">Optional Permisisons</button>
+      <button id="permissionRemoval">Remove Optional Permisisons</button>
+    </div>
   </body>
-  
- <body>
-   <button onclick="checkACookieExists()">
-      Check a cookie exists
-   </button>
-  
-  <button onclick="clearOutputACookieExists()">
-    Clear
-  </button>
-
-  <div>
-    <code id="a-cookie-existence"></code>
-  </div>
- </body>
-  
 </html>
-
