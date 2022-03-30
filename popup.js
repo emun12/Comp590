@@ -124,11 +124,14 @@ function clearOutputACookieExists() {
 function logStores(cookieStores) {
   for(store of cookieStores) {
     console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);;
+    const output = document.getElementById('cookie-store')
+    output.textContent = 'This is the cookie store'
   }
+  
 }
 
-   let getting = browser.cookies.getAllCookieStores();
-   getting.then(logStores);
+//    let getting = browser.cookies.getAllCookieStores();
+//    getting.then(logStores);
 
 
 
