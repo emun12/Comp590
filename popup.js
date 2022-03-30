@@ -120,6 +120,19 @@ function clearOutputACookieExists() {
 }
 
 
+// Retrieving all cookie stores, printing out each cookie store ID, and printing out the tabs that currently share each cookie store.
+function logStores(cookieStores) {
+  for(store of cookieStores) {
+    console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
+  }
+}
+
+let getting = browser.cookies.getAllCookieStores();
+getting.then(logStores);
+
+
+
+
 // requesting optional permissions
 document.querySelector('#optionalPermissions').addEventListener('click', (event) => {
   // Permissions must be requested from inside a user gesture, like a button's
