@@ -140,26 +140,36 @@ document.querySelector('#optionalPermissions').addEventListener('click', (event)
 });
 
 
-// removing optional permissions
+// checks cookie current permissions
 
-document.querySelector('#permissionRemoval').addEventListener('click', (event) => {
-
-  chrome.permissions.remove({
-    permissions: ['tabs'],
-    origins: ['https://www.google.com/']
-  }, (removed) => {
-    if (removed) {
-      //BUG
-      // The permissions have been removed.
-      alert("Permission removed");
-    } else {
-      // The permissions have not been removed (e.g., you tried to remove
-      // required permissions).
-      alert("Permission not removed");
-
-    }
-  }) 
-}); 
+chrome.permissions.contains({
+  permissions: ['tabs'],
+  origins: ['https://www.google.com/']
+}, (result) => {
+  if (result) {
+    // The extension has the permissions.
+  } else {
+    // The extension doesn't have the permissions.
+  }
+});
 
 
+// Removing permissions 
+const permissionToRemove = {
+  permissions: ["tabs"]
+}
 
+function remove() {
+  console.log("removing");
+  chrome.permissions.remove(permissionToRemove).then(result => {
+    console.log(result);
+    alert("Permission removed");
+
+  });
+}
+
+document.querySelector("#remove").addEventListener("click", remove);
+
+// Adds a badge 
+chrome.action.setBadgeText({text: 'ON'});
+chrome.action.setBadgeBackgroundColor({color: '#4688F1'});
