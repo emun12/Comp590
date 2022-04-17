@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="popup.js" type="module"></script>
-    <link rel="stylesheet" href="popup.css" />
-  </head>
 
-  <body>
+<head>
+  <script src="popup.js" type="module"></script>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <header>
     <h1>Welcome to our cookie extension!</h1>
-    <div>
-      <form id="control-row">
-        <label for="input">Domain:</label>
-        <input type="text" id="input" />
-        <br />
+  </header>
 
-        <button id="go">Clear Cookies</button>
-      </form>
+  <div>
+    <form id="control-row">
+      <label for="input">Domain:</label>
+      <input type="text" id="input" />
+      <br />
+
+
+    </form>
+    <div class="button-group">
+
+      <button id="go">Clear Cookies</button>
       <span id="message" hidden></span>
 
       <button onclick="checkACookieExists()">Check a cookie exists</button>
@@ -30,6 +37,12 @@
 
       <button onclick="getAllCookieStores()">Get Cookie Stores</button>
 
+
+
     </div>
-  </body>
+
+
+  </div>
+</body>
+
 </html>

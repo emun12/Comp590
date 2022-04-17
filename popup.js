@@ -147,8 +147,13 @@ document.querySelector('#optionalPermissions').addEventListener('click', (event)
   }, (granted) => {
     // The callback argument will be true if the user granted the permissions.
     if (granted) {
-      // doSomething();
+      
+
+  // Adds a badge 
+      chrome.action.setBadgeText({text: 'ON'});
+      chrome.action.setBadgeBackgroundColor({color: '#a9d9d0'});
       alert("Optional permission granted");
+
     } else {
       // doSomethingElse();
       alert(" Optional permission denied");
@@ -181,12 +186,13 @@ function remove() {
   chrome.permissions.remove(permissionToRemove).then(result => {
     console.log(result);
     alert("Permission removed");
-
+   
   });
-}
 
+
+  // Removes badge 
+  chrome.action.setBadgeText({text: ''});
+}
 document.querySelector("#remove").addEventListener("click", remove);
 
-// Adds a badge 
-chrome.action.setBadgeText({text: 'ON'});
-chrome.action.setBadgeBackgroundColor({color: '#4688F1'});
+

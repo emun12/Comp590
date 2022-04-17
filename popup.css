@@ -1,27 +1,49 @@
 /********** TITLE **********/
+
+header {
+  background-color: #a9d9d0;
+  margin: 0px;
+  padding:0;
+}
+
 h1 {
   font-weight: 250;
 }
 
-
 /********** BUTTON **********/
+
+body {
+  height: 80vh;
+  width: 95vw;
+
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* background-color:red; */
+  margin-top: 5px;
+}
+
+
 button {
-    height: 50px;
-    width: 100px;
-    outline: none;
-    margin: 10px;
-    /* border: none; */
+  height: 60px;
+  width: 110px;
+  outline: none;
+  margin: 10px 8px;
+  /* border: none; */
 
-    border: 1px black solid;
-    border-radius: 10px;
-  }
-  
-  button.current {
-    box-shadow: 0 0 0 2px white,
-                0 0 0 4px black;
-  }
+  border: 1px black solid;
+  border-radius: 10px;
+}
 
+button.current {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+}
 
-button:hover, button:active {
-  background-color:#A9D9D0;
+button:hover,
+button:active {
+  background-color: #a9d9d0;
 }
