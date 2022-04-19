@@ -2,6 +2,7 @@ const form = document.getElementById("control-row");
 const go = document.getElementById("go");
 const input = document.getElementById("input");
 const message = document.getElementById("message");
+// const output = document.getElementByID("a-cookie-existence");
 
 // The async IIFE is necessary because Chrome <89 does not support top level await.
 (async function initPopupWindow() {
@@ -105,9 +106,9 @@ function clearMessage() {
 //document.cookie = "reader=1; SameSite=Lax; Secure";
 // This is a cookie called "reader=1" and we can use the code below to check if this cookie exists.
 
-function checkACookieExists(cookie) {
+function checkACookieExists() {
   // In the original code, this parameter did not exist. The cookie parameter should be a string
-  if (document.cookie.split(';').some((item) => item.trim().startsWith(cookie))) {
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
     // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
     const output = document.getElementById('a-cookie-existence')
     output.textContent = '> The cookie exists'
