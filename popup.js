@@ -183,14 +183,14 @@ document.querySelector('#cookiestore').addEventListener('click', (event) => {
 document.querySelector('#cookieexists').addEventListener('click', (event) => {
   const output = document.getElementById('a-cookie-existence')
   // In the original code, this parameter did not exist. The cookie parameter should be a string
-  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('username='))) {
     // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
     
-    output.textContent = "The 'reader' cookie does exist"
+    output.textContent = "The 'username' cookie does exist"
     
   } 
-   //output.textContent = "The 'reader' cookie does not exist"
-  alert("The 'reader' cookie does not exist")
+   //output.textContent = "The 'username' cookie does not exist"
+  alert("The 'username' cookie does not exist")
   
 
 });
