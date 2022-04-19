@@ -106,14 +106,14 @@ function clearMessage() {
 //document.cookie = "reader=1; SameSite=Lax; Secure";
 // This is a cookie called "reader=1" and we can use the code below to check if this cookie exists.
 
-function checkACookieExists() {
-  // In the original code, this parameter did not exist. The cookie parameter should be a string
-  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
-    // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
-    const output = document.getElementById('a-cookie-existence')
-    output.textContent = '> The cookie exists'
-  }
-}
+// function checkACookieExists() {
+//   // In the original code, this parameter did not exist. The cookie parameter should be a string
+//   if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+//     // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
+//     const output = document.getElementById('a-cookie-existence')
+//     output.textContent = '> The cookie exists'
+//   }
+// }
 
 // This function is similar to the function needed for the "Clear Buttons" function so this function is unneeded.
 //function clearOutputACookieExists() {
@@ -237,11 +237,7 @@ document.querySelector('#cookiestore').addEventListener('click', (event) => {
   //const output = document.getElementById('a-cookie-existence')
   //output.textContent = ''
 //}
-#document.querySelector(#cookieexists").addEventListener("click, checkACookieExists);
-
-
-
-
+//document.querySelector(#cookieexists").addEventListener("click, checkACookieExists);
 
 
 
