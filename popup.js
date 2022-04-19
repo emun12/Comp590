@@ -213,8 +213,26 @@ document.querySelector("#remove").addEventListener("click", remove);
 // });
 
 
+// third solution - it works but alert is weird
 
-function logStores(cookieStores) {
+// function logStores(cookieStores) {
+//   for (let store of cookieStores) {
+//     // console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
+//     //output.textContent = 'Cookie Stores' + ${store.id}
+//       alert(store.id);
+//   }
+// }
+
+// let getting = chrome.cookies.getAllCookieStores();
+// getting.then(logStores);
+
+// document.querySelector("#cookiestore").addEventListener("click", getting.then(logStores));
+
+
+
+document.querySelector('#cookieexists').addEventListener('click', (event) => {
+
+  function logStores(cookieStores) {
   for (let store of cookieStores) {
     // console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
     //output.textContent = 'Cookie Stores' + ${store.id}
@@ -223,8 +241,11 @@ function logStores(cookieStores) {
 }
 
 let getting = chrome.cookies.getAllCookieStores();
+getting.then(logStores);
 
-document.querySelector("#cookiestore").addEventListener("click", getting.then(logStores));
+});
+
+
 
 
 
