@@ -236,7 +236,8 @@ document.querySelector('#cookiestore').addEventListener('click', (event) => {
   for (let store of cookieStores) {
     // console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
     //output.textContent = 'Cookie Stores' + ${store.id}
-      alert(store.id);
+      alert(store);
+    // alert(store).id;
   }
 }
 
