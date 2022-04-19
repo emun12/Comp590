@@ -202,19 +202,27 @@ document.querySelector("#remove").addEventListener("click", remove);
 
 
 
+// this one mostly works just let getting doesn't work because browser doesn't exist.
+// document.querySelector('#cookiestore').addEventListener('click', (event) => {
 
-document.querySelector('#cookiestore').addEventListener('click', (event) => {
+//   let getting = browser.cookies.getAllCookieStores();
+//   const output = document.getElementById('cookie-store')
+//   console.log(`Cookie store: ${store.id}`);
+//   output.textContent = 'This is the cookie store'
 
-  let getting = browser.cookies.getAllCookieStores();
-  const output = document.getElementById('cookie-store')
-  console.log(`Cookie store: ${store.id}`);
-  output.textContent = 'This is the cookie store'
-
-});
-
-
+// });
 
 
+
+function logStores(cookieStores) {
+  for (let store of cookieStores) {
+    console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
+  }
+}
+
+let getting = browser.cookies.getAllCookieStores();
+
+document.querySelector("#cookiestore").addEventListener("click", getting.then(logStores));
 
 
 
