@@ -256,9 +256,10 @@ document.querySelector('#cookieexists').addEventListener('click', (event) => {
   if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
     // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
     
-    output.textContent = 'The cookie exists'
-  } else {
-    output.textContent = 'The cookie does not exist' 
-  }
+    output.textContent = 'The reader cookie exists'
+    break;
+  } 
+   output.textContent = 'The reader cookie does not exist' 
+  
 
 });
