@@ -122,20 +122,7 @@ function checkACookieExists() {
 //}
 
 
-// Retrieving all cookie stores & printing out all cookie store IDs
-function getAllCookieStores() {
-  
-  let getting = browser.cookies.getAllCookieStores();
-  const output = document.getElementById('cookie-store')
-  console.log(`Cookie store: ${store.id}`);
-  output.textContent = 'This is the cookie store'
- 
-  
-}
-//   for(store of cookieStores) {
-//     console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
-//    let getting = browser.cookies.getAllCookieStores();
-//    getting.then(logStores);
+
 
 
 
@@ -198,3 +185,38 @@ function remove() {
 document.querySelector("#remove").addEventListener("click", remove);
 
 
+// Retrieving all cookie stores & printing out all cookie store IDs
+function getAllCookieStores() {
+  
+  let getting = browser.cookies.getAllCookieStores();
+  const output = document.getElementById('cookie-store')
+  console.log(`Cookie store: ${store.id}`);
+  output.textContent = 'This is the cookie store'
+}
+//   for(store of cookieStores) {
+//     console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
+//    let getting = browser.cookies.getAllCookieStores();
+//    getting.then(logStores);
+
+document.querySelector(#cookiestore").addEventListener("click, getAllCookieStores);
+
+
+// Checking if a cookie exists
+//document.cookie = "reader=1; SameSite=Lax; Secure";
+// This is a cookie called "reader=1" and we can use the code below to check if this cookie exists.
+
+function checkACookieExists() {
+  // In the original code, this parameter did not exist. The cookie parameter should be a string
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+    // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
+    const output = document.getElementById('a-cookie-existence')
+    output.textContent = '> The cookie exists'
+  }
+}
+
+// This function is similar to the function needed for the "Clear Buttons" function so this function is unneeded.
+//function clearOutputACookieExists() {
+  //const output = document.getElementById('a-cookie-existence')
+  //output.textContent = ''
+//}
+document.querySelector(#cookieexists").addEventListener("click, checkACookieExists);
