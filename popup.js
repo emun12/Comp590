@@ -218,7 +218,7 @@ function logStores(cookieStores) {
   for (let store of cookieStores) {
     // console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
     //output.textContent = 'Cookie Stores' + ${store.id}
-      return store;
+      alert(store.id);
   }
 }
 
