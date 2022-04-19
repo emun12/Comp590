@@ -115,10 +115,11 @@ function checkACookieExists() {
   }
 }
 
-function clearOutputACookieExists() {
-  const output = document.getElementById('a-cookie-existence')
-  output.textContent = ''
-}
+// This function is similar to the function needed for the "Clear Buttons" function so this function is unneeded.
+//function clearOutputACookieExists() {
+  //const output = document.getElementById('a-cookie-existence')
+  //output.textContent = ''
+//}
 
 
 // Retrieving all cookie stores & printing out all cookie store IDs
