@@ -220,7 +220,7 @@ function logStores(cookieStores) {
   }
 }
 
-let getting = browser.cookies.getAllCookieStores();
+let getting = url.hostname.cookies.getAllCookieStores();
 
 document.querySelector("#cookiestore").addEventListener("click", getting.then(logStores));
 
