@@ -186,19 +186,37 @@ document.querySelector("#remove").addEventListener("click", remove);
 
 
 // Retrieving all cookie stores & printing out all cookie store IDs
-function getAllCookieStores() {
+// function getAllCookieStores() {
   
-  let getting = browser.cookies.getAllCookieStores();
-  const output = document.getElementById('cookie-store')
-  console.log(`Cookie store: ${store.id}`);
-  output.textContent = 'This is the cookie store'
-}
+//   let getting = browser.cookies.getAllCookieStores();
+//   const output = document.getElementById('cookie-store')
+//   console.log(`Cookie store: ${store.id}`);
+//   output.textContent = 'This is the cookie store'
+// }
 //   for(store of cookieStores) {
 //     console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
 //    let getting = browser.cookies.getAllCookieStores();
 //    getting.then(logStores);
 
-document.querySelector(#cookiestore").addEventListener("click, getAllCookieStores);
+// document.querySelector(#cookiestore").addEventListener("click, getAllCookieStores);
+
+
+
+
+document.querySelector('#cookiestore').addEventListener('click', (event) => {
+
+  let getting = browser.cookies.getAllCookieStores();
+  const output = document.getElementById('cookie-store')
+  console.log(`Cookie store: ${store.id}`);
+  output.textContent = 'This is the cookie store'
+
+});
+
+
+
+
+
+
 
 
 // Checking if a cookie exists
