@@ -189,7 +189,8 @@ document.querySelector('#cookieexists').addEventListener('click', (event) => {
     output.textContent = "The 'reader' cookie does exist"
     
   } 
-   output.textContent = "The 'reader' cookie does not exist"
+   //output.textContent = "The 'reader' cookie does not exist"
+  alert("The 'reader' cookie does not exist")
   
 
 });
