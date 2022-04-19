@@ -230,7 +230,7 @@ document.querySelector("#remove").addEventListener("click", remove);
 
 
 
-document.querySelector('#cookieexists').addEventListener('click', (event) => {
+document.querySelector('#cookiestore').addEventListener('click', (event) => {
 
   function logStores(cookieStores) {
   for (let store of cookieStores) {
