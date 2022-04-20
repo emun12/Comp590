@@ -1,47 +1,63 @@
+/********** BODY **********/
+.main {
+  width: 97vw;
+  font-family: fantasy;
+  background-color: black;
+  padding-bottom: 4px;
 /********** TITLE **********/
 
-header {
-    background-color: #a9d9d0;
-    margin: 0px;
-    padding: 0;
-}
-
 h1 {
-    font-weight: 250;
+  font-weight: 250;
+  padding: 10px;
+  text-align: center;
+  background-color: #0099D8;
+  color: white;
 }
 
+form {
+  color: white;
+  text-align: center;
 
-/********** BUTTON **********/
-
-body {
-    height: 80vh;
-    width: 95vw;
 }
 
+/********** BUTTONS **********/
 .button-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* background-color:red; */
-    margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 15px;
 }
 
 button {
-    height: 60px;
-    width: 110px;
-    outline: none;
-    margin: 10px 8px;
-    /* border: none; */
-    border: 1px black solid;
-    border-radius: 10px;
-}
-
-button.current {
-    box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  height: 90px;
+  width: 100px;
+  margin: 8px 6px;
+  border: 1px black solid;
+  border-radius: 100%;
+  background-color: white;
 }
 
 button:hover,
 button:active {
-    background-color: #a9d9d0;
+  background-color: #FC980A;
+  border: 1px #8F5315 solid;
+
+}
+
+
+/********** IMG **********/
+img {
+  width: 30%;
+  float: left;
+  vertical-align: middle;
+}
+
+
+/********** FOOTER **********/
+p {
+  text-align: center;
+  color: black;
+  background-color: white;
+
 }
