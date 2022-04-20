@@ -7,42 +7,37 @@
 </head>
 
 <body>
-  <header>
-    <h1>Welcome to our cookie extension!</h1>
-  </header>
+  <div class="main">
+    <h1>Me Want Cookie Extension</h1>
 
-  <div>
     <form id="control-row">
       <label for="input">Domain:</label>
       <input type="text" id="input" />
-      <br />
-
-
     </form>
-    <div class="button-group">
-
-      <button id="go">Clear Cookies</button>
-      <span id="message" hidden></span>
-
-      <button onclick="checkACookieExists()">Check a cookie exists</button>
-
-      <button onclick="clearOutputACookieExists()">Clear</button>
-
+    <br />
+    <div>
       <div>
-        <code id="a-cookie-existence"></code>
+        <img src="/images/monster.png" />
       </div>
+      <div class="button-group">
+        <button id="go">Clear Cookies</button>
+        <span id="message" hidden></span>
+        <button onclick="checkACookieExists()">Check a cookie exists</button>
 
-      <button id="optionalPermissions">Optional Permisisons</button>
-      <button id="remove">Remove optional permisisons</button>
+        <button onclick="clearOutputACookieExists()">Clear</button>
+        <div>
+          <code id="a-cookie-existence"></code>
+        </div>
 
-      <button onclick="getAllCookieStores()">Get Cookie Stores</button>
+        <button id="optionalPermissions">Optional Permisisons</button>
+        <button id="remove">Remove optional permisisons</button>
 
-
-
+        <button onclick="getAllCookieStores()">Get Cookie Stores</button>
+      </div>
     </div>
-
-
+   
   </div>
+  <footer><p>&copy; 2022</p></footer>
 </body>
 
 </html>
