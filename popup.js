@@ -194,3 +194,10 @@ document.querySelector('#cookieexists').addEventListener('click', (event) => {
   
 
 });
+
+
+// function for clearing cookies
+document.querySelector('#go').addEventListener('click', (event) => {
+  alert("Cookies have been cleared")
+  
+});
