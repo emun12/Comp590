@@ -1,12 +1,9 @@
 /********** BODY **********/
 .main {
-  /* height: 90vh; */
   width: 97vw;
   font-family: fantasy;
   background-color: black;
   padding-bottom: 4px;
-}
-
 /********** TITLE **********/
 
 h1 {
@@ -20,6 +17,7 @@ h1 {
 form {
   color: white;
   text-align: center;
+
 }
 
 /********** BUTTONS **********/
@@ -31,7 +29,6 @@ form {
   margin: 15px;
 }
 
-
 button {
   height: 90px;
   width: 100px;
@@ -39,7 +36,6 @@ button {
   border: 1px black solid;
   border-radius: 100%;
   background-color: white;
-
 }
 
 button:hover,
@@ -63,4 +59,5 @@ p {
   text-align: center;
   color: black;
   background-color: white;
+
 }

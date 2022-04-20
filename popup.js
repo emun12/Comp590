@@ -2,6 +2,7 @@ const form = document.getElementById("control-row");
 const go = document.getElementById("go");
 const input = document.getElementById("input");
 const message = document.getElementById("message");
+// const output = document.getElementByID("a-cookie-existence");
 
 // The async IIFE is necessary because Chrome <89 does not support top level await.
 (async function initPopupWindow() {
@@ -101,40 +102,6 @@ function clearMessage() {
   message.textContent = "";
 }
 
-// Checking if a cookie exists
-//document.cookie = "reader=1; SameSite=Lax; Secure";
-// This is a cookie called "reader=1" and we can use the code below to check if this cookie exists.
-
-function checkACookieExists(cookie) {
-  // In the original code, this parameter did not exist. The cookie parameter should be a string
-  if (document.cookie.split(';').some((item) => item.trim().startsWith(cookie))) {
-    // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
-    const output = document.getElementById('a-cookie-existence')
-    output.textContent = '> The cookie exists'
-  }
-}
-
-function clearOutputACookieExists() {
-  const output = document.getElementById('a-cookie-existence')
-  output.textContent = ''
-}
-
-
-// Retrieving all cookie stores & printing out all cookie store IDs
-function getAllCookieStores() {
-  
-  let getting = browser.cookies.getAllCookieStores();
-  const output = document.getElementById('cookie-store')
-  console.log(`Cookie store: ${store.id}`);
-  output.textContent = 'This is the cookie store'
- 
-  
-}
-//   for(store of cookieStores) {
-//     console.log(`Cookie store: ${store.id}\n Tab IDs: ${store.tabIds}`);
-//    let getting = browser.cookies.getAllCookieStores();
-//    getting.then(logStores);
-
 
 
 // requesting optional permissions
@@ -196,3 +163,34 @@ function remove() {
 document.querySelector("#remove").addEventListener("click", remove);
 
 
+
+// function for getting the ID's of the cookie stores
+document.querySelector('#cookiestore').addEventListener('click', (event) => {
+
+  function logStores(cookieStores) {
+    for (let store of cookieStores) {
+      alert("This is a list of the cookie store IDs: " + store.id);
+    }
+  }
+
+  let getting = chrome.cookies.getAllCookieStores();
+  getting.then(logStores);
+
+});
+
+
+// function for checking if a cookie that starts with "reader=" exists
+document.querySelector('#cookieexists').addEventListener('click', (event) => {
+  const output = document.getElementById('a-cookie-existence')
+  // In the original code, this parameter did not exist. The cookie parameter should be a string
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('username='))) {
+    // the cookie parameter should be a string and includes what the cookie starts with. For example "reader="
+    
+    output.textContent = "The 'username' cookie does exist"
+    
+  } 
+   //output.textContent = "The 'username' cookie does not exist"
+  alert("The 'username' cookie does not exist")
+  
+
+});

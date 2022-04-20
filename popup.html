@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
   <div class="main">
     <h1>Me Want Cookie Extension</h1>
 
@@ -14,26 +15,29 @@
       <label for="input">Domain:</label>
       <input type="text" id="input" />
     </form>
+
     <br />
     <div>
+
+    <div class="button-group">
+
+      <button id="go">Clear Cookies</button>
+      <span id="message" hidden></span>
+
+      <button id="cookieexists">Check if "Username" Cookie Exists</button>
       <div>
         <img src="/images/monster.png" />
-      </div>
-      <div class="button-group">
-        <button id="go">Clear Cookies</button>
-        <span id="message" hidden></span>
-        <button onclick="checkACookieExists()">Check a cookie exists</button>
-
-        <button onclick="clearOutputACookieExists()">Clear</button>
+      </div> 
+      
+      
         <div>
           <code id="a-cookie-existence"></code>
         </div>
+      
+       <button id="optionalPermissions">Optional Permissions</button>
+      <button id="remove">Remove Optional Permissions</button>
 
-        <button id="optionalPermissions">Optional Permisisons</button>
-        <button id="remove">Remove optional permisisons</button>
-
-        <button onclick="getAllCookieStores()">Get Cookie Stores</button>
-      </div>
+      <button id="cookiestore">Get Cookie Store ID</button>
     </div>
    
   </div>
